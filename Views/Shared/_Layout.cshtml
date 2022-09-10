@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Portfolio Dev</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>       
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand">Portifólio<b>Dev</b></a>
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collection of nav links, forms, and other content for toggling -->
+            <div id="navbarCollapse" class="navbar-collapse justify-content-start collapse" style="">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" asp-area="" asp-controller="Home" asp-action="Index">Projetos</a>
+                    <a class="nav-item nav-link" asp-area="" asp-controller="Home" asp-action="Index">Videos</a>
+                    <a class="nav-item nav-link" asp-area="" asp-controller="Home" asp-action="Index">Blog</a>
+                    <a class="nav-item nav-link" asp-area="" asp-controller="Home" asp-action="Index">Contato</a>
+                </div>
+                <form class="navbar-form form-inline">
+                    <div class="input-group search-box">
+                        <input type="text" id="search" class="form-control" placeholder="Search here...">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="material-icons"></i>
+                            </span>
+                        </div>
+                    </div>           
+                </form>
+            </div>
+                    @await Html.PartialAsync("_LoginPartial")
+        </nav>   
+        
+    </header>
+               
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - Portfolio_Dev - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

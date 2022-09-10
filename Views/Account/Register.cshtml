@@ -1,0 +1,25 @@
+﻿@model LoginViewModel
+
+<div class="nav-item dropdown">    
+    <div class="dropdown-menu action-form">
+        <form asp-controller="Account" asp-action="Register" method="post" role="form">
+            <div asp-validation-summary="All" class="btn-danger"></div>
+            <input type="hidden" asp-for="ReturnUrl" />
+            <div class="form-group">
+                <input type="text" class="form-control" asp-for="UserName" placeholder="Username" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" asp-for="Email" placeholder="E-mail" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" asp-for="Password" placeholder="Senha" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">               
+                    <input type="submit" class="btn btn-success" value="Cadastrar" />               
+            </div>
+        </form>
+</div>
+</div>
