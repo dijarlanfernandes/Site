@@ -29,7 +29,7 @@ namespace Portfolio_Dev
             services.AddControllersWithViews();
 
             services.AddDbContext<AppDbContext>(options => 
-            options.UseSqlServer(Configuration.GetConnectionString("Stringsql")));
+            options.UseSqlServer(Configuration.GetConnectionString("sql")));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>()
